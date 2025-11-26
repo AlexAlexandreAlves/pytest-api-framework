@@ -1,3 +1,4 @@
 pytest
 requests
-pytest-reporter-html1 # Para gerar relatórios em HTML
+pytest-reporter-html1
+mypy
