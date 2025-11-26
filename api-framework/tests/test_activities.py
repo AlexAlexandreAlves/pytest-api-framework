@@ -1,6 +1,6 @@
 import pytest
 from src.api_endpoints import Endpoints
-from tests.data.activities import ACTIVITIES_POST_DATA, ACTIVITIES_BY_ID_DATA
+from tests.data.activities import ACTIVITIES_POST_DATA, ACTIVITIES_BY_ID_DATA, ACTIVITIES_UPDATE_DATA
 
 
 @pytest.mark.parametrize("activity", ACTIVITIES_BY_ID_DATA)
@@ -34,3 +34,22 @@ def test_create_activities(api_client, activity):
     assert body.get("title") == activity["title"]
     assert body.get("dueDate") == activity["dueDate"]
     assert body.get("completed") == activity["completed"]
+
+
+@pytest.mark.parametrize("activity", ACTIVITIES_UPDATE_DATA)
+def test_update_activities(api_client, activity):
+    response = api_client.put(
+        Endpoints.ACTIVITIES_BY_ID, data=activity, id=activity["id"])
+    body = response.json()
+
+    assert response.status_code == 200
+
+    assert body.get("title") == activity["title"]
+    assert body.get("dueDate") == activity["dueDate"]
+    assert body.get("completed") == activity["completed"]
+
+
+@pytest.mark.parametrize("activity", ACTIVITIES_BY_ID_DATA)
+def test_delete_activity(api_client, activity):
+    response = api_client.delete(Endpoints.ACTIVITIES_BY_ID, id=activity["id"])
+    assert response.status_code == 200

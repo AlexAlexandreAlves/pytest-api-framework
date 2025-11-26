@@ -38,3 +38,18 @@ ACTIVITIES_BY_ID_DATA = [
         "completed": True
     }
 ]
+
+ACTIVITIES_UPDATE_DATA = [
+    {
+        "id": 1,
+        "title": "Updated Activity 1",
+        "dueDate": "2024-12-31T23:59:59Z",
+        "completed": False
+    },
+    {
+        "id": 2,
+        "title": "Updated Activity 2",
+        "dueDate": "2024-12-25T10:00:00Z",
+        "completed": True
+    }
+]
