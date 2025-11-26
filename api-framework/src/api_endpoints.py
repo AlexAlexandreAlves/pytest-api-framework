@@ -1,0 +1,2 @@
+class Endpoints:
+    GROUPS = "/groups"
