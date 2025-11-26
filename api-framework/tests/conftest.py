@@ -3,5 +3,5 @@ from src.api_client import APIClient
     
 @pytest.fixture(scope="module")
 def api_client():
-    client = APIClient(base_url="https://dogapi.dog/api/v2/")
+    client = APIClient(base_url="https://fakerestapi.azurewebsites.net/")
     yield client
