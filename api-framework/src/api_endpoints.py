@@ -1,2 +1,2 @@
 class Endpoints:
-    GROUPS = "/groups"
+    ACTIVITIES = "/api/v1/Activities"
