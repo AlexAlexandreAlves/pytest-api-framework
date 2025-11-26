@@ -1,7 +1,0 @@
-# Created by venv; see https://docs.python.org/3/library/venv.html
-.pytest_cache/
-bin
-include/
-lib
-src/__pycache__
-tests/__pycache__/

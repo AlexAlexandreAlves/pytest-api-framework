@@ -1,0 +1,10 @@
+api-framework/reports/html1-report.html
+.pytest_cache/
+bin
+include/
+lib
+src/__pycache__
+tests/__pycache__/
+api-framework/src/__pycache__/*
+api-framework/tests/__pycache__/*
+api-framework/tests/data/__pycache__/*
