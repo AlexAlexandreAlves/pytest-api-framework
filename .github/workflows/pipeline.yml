@@ -6,7 +6,7 @@ on:
 
 jobs:
   test:
-    name: Run tests 
+    name: Run tests
     runs-on: ubuntu-latest
     env:
       PYTHONPATH: api-framework
@@ -17,8 +17,8 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.14'
-          cache: 'pip'
+          python-version: "3.14"
+          cache: "pip"
 
       - name: Install dependencies
         run: |
@@ -27,10 +27,13 @@ jobs:
 
       - name: Run test_activities.py
         run: |
-         pytest api-framework/tests/test_activities.py -q
-         ls
-         pwd
-
+          pytest api-framework/tests/test_activities.py -q
+     
+  upload-artifact:
+    name: Upload test report artifact
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
       - name: Upload test report artifact
         uses: actions/upload-artifact@v4
         if: always()
@@ -38,4 +41,3 @@ jobs:
           name: test-report-html
           path: reports/html1-report.html
           retention-days: 30
-    
