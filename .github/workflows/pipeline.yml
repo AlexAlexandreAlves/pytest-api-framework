@@ -27,7 +27,7 @@ jobs:
 
       - name: Run test_activities.py
         run: |
-          pytest api-framework/tests/test_activities.py --html=api-framework/reports/html1-report.html --self-contained-html
+          pytest api-framework/tests/test_activities.py
 
       - name: Upload temp artifact
         uses: actions/upload-artifact@v4
