@@ -29,4 +29,13 @@ jobs:
 
       - name: Run test_activities.py
         run: |
-          pytest api-framework/tests/test_activities.py -q
+         pytest api-framework/tests/test_activities.py -q
+
+      - name: Upload test report artifact
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: test-report-html
+          path: api-framework/reports/html1-report.html
+          retention-days: 30
+    
