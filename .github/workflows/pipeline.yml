@@ -32,7 +32,7 @@ jobs:
          pytest api-framework/tests/test_activities.py -q
 
       - name: Upload test report artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: test-report-html
