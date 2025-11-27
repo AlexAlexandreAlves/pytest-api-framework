@@ -29,16 +29,12 @@ jobs:
         run: |
           pytest api-framework/tests/test_activities.py
 
-      - name: List reports directory
-        run: |
-          ls -la api-framework/reports  
-
       - name: Upload temp artifact
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: test-reports-temp
-          path: api-framework/reports/html1-report.html
+          path: reports/html1-report.html
      
   upload-test-report:
     name: Upload test report artifact
@@ -55,5 +51,5 @@ jobs:
         if: always()
         with:
           name: test-report-html
-          path: api-framework/reports/html1-report.html  # Ajuste o caminho para refletir a estrutura correta
+          path: reports/html1-report.html 
           retention-days: 30
