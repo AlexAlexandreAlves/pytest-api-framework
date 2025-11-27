@@ -27,17 +27,29 @@ jobs:
 
       - name: Run test_activities.py
         run: |
-          pytest api-framework/tests/test_activities.py -q
+          pytest api-framework/tests/test_activities.py --html=api-framework/reports/html1-report.html --self-contained-html
+
+      - name: Upload temp artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-reports-temp
+          path: api-framework/reports/html1-report.html
      
   upload-artifact:
     name: Upload test report artifact
     runs-on: ubuntu-latest
     needs: test
     steps:
+      - name: Download test reports
+        uses: actions/download-artifact@v4
+        with:
+          name: test-reports-temp
+
       - name: Upload test report artifact
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: test-report-html
-          path: reports/html1-report.html
+          path: html1-report.html
           retention-days: 30
