@@ -178,6 +178,9 @@ pip install -r requirements.txt
 # Run all tests
 pytest
 
+# Run tests with @pytest.mark (example: testdb)
+pytest -m testdb
+
 # Run with verbose output
 pytest -v
 
