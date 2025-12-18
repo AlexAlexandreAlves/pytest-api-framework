@@ -21,7 +21,6 @@ This project provides a robust framework for testing REST APIs and PostgreSQL da
 
 ```
 pytest-api-framework/
-├── api-framework/
 │   ├── src/
 │   │   ├── __init__.py
 │   │   ├── api_client.py         # REST API client abstraction
