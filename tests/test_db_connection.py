@@ -1,4 +1,6 @@
-# Em um teste
+import pytest
+
+@pytest.mark.testdb
 def test_users(db_connection):
     people = db_connection.execute_query_dict(
         "SELECT * FROM people WHERE id = %s",
